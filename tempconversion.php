@@ -1,5 +1,21 @@
 <!--tempconversion.php-->
 <?php
+    //Setting the error message variable
+    $errorMessage='';
+    //Shows results if data is filled in
+    if(isset($_POST["tTemperature"])) {
+        //Validation
+        //Error message if both inputs are empty
+        if(!is_numeric($_POST["tTemperature"]) && !$_POST["rRadio"]){
+                $errorMessage='Please input a temperature and conversion type.';
+        //Error message if temperature is empty
+        } else if(!is_numeric($_POST["tTemperature"])){
+                $errorMessage='Please input a temperature.';
+        //Error message if radio is empty
+        } else if(!$_POST["rRadio"]){
+                $errorMessage='Please select a conversion type';
+        }
+            
         if(isset($_POST["tTemperature"]) && isset($_POST["rRadio"])){
 
                 //Defining Variables
