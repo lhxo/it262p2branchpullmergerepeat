@@ -27,4 +27,22 @@
             <p><input type="submit" value="Convert"/></p>
         </form>
     </body>
+    <?php
+        //Output
+        if(isset($_POST["tTemperature"]) && isset($_POST["rRadio"])) {
+                if(is_numeric($inputtedTemperature) && $inputtedRadio == "F") {
+                        echo "<p>Your inputted temperature is: $inputConcat</p>";
+                        echo "<p>$inputConcat converts to $results1$D$C and $results2$K</p>";
+                        } elseif (is_numeric($inputtedTemperature) && $inputtedRadio == "C") {
+                        echo "<p>Your inputted temperature is: $inputConcat</p>";
+                        echo "<p>$inputConcat converts to $results1$D$F and $results2$K</p>";
+                        } elseif (is_numeric($inputtedTemperature) && $inputtedRadio == "K") {
+                        echo "<p>Your inputted temperature is: $inputConcat</p>";
+                        echo "<p>$inputConcat converts to $results1$D$F and $results2$D$C</p>";
+                        } else {
+                        echo "<p>Your inputted temperature is: ___</p>";
+                        echo "<p>___ converts to ___ and ___</p>";
+                        }
+        }
+        ?>
 </html>
